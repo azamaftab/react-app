@@ -18,6 +18,9 @@ const styles = theme => ({
 });
 
 class Course extends Component {
+    constructor(props, context) {
+        super(props, context)
+    }
     render() {
         const { classes } = this.props;
 
@@ -37,6 +40,7 @@ class Course extends Component {
                                 placeholder="Add Courses"
                                 fullWidth
                                 margin="normal"
+                                onChange={this.handleChange}
                             />
                         </div>
                         <button type="submit" class="btn btn-primary">Submit</button>
