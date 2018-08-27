@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@material-ui/core": "^3.0.0",
     "install": "^0.12.1",
     "npm": "^6.4.0",
     "react": "^16.4.2",
