@@ -20,7 +20,18 @@ const styles = theme => ({
 class Course extends Component {
     constructor(props, context) {
         super(props, context)
-    }
+        this.state = {
+            course: { Title: "" }
+        }
+        this.handleChange = this.handleChange.bind(this);
+     //   this.saveCourse = this.saveCourse.bind(this);
+    };
+    handleChange(event) {
+        const course = this.state.course;
+        course.Title = event.target.value;
+        this.setState({course:course});
+    };
+
     render() {
         const { classes } = this.props;
 
@@ -30,7 +41,7 @@ class Course extends Component {
                     <fieldset>
                         <legend>Course Page</legend>
 
-                        <div class="form-group">
+                        <div className="form-group">
                             <TextField
                                 id="full-width"
                                 label="Course"
@@ -43,7 +54,7 @@ class Course extends Component {
                                 onChange={this.handleChange}
                             />
                         </div>
-                        <button type="submit" class="btn btn-primary">Submit</button>
+                        <button type="submit" onChange={this.saveCourse} className="btn btn-primary">Submit</button>
                     </fieldset>
                 </form>
             </div>
