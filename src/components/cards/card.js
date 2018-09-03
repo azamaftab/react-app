@@ -1,6 +1,13 @@
 
 import React, { Component } from "react";
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+
+const styles =  ({
+    cursorPointer: {
+        cursor: 'pointer'
+    }
+});
 class Card extends Component {
     constructor(props) {
         super();
@@ -17,7 +24,17 @@ class Card extends Component {
                 <td>
                     <img src={this.state.item.image} width="50px" height="50px"></img>
                 </td>
-            </tr>
+                <td>
+                    <div className="row">
+                        <div className="col-sm-2" style={styles.cursorPointer}>
+                            <FontAwesomeIcon icon="times" />
+                        </div>
+                        <div className="col-sm-2" style={styles.cursorPointer}>
+                            <FontAwesomeIcon icon="pencil-alt" />
+                        </div>
+                    </div>
+                </td>
+            </tr >
         );
     }
 }

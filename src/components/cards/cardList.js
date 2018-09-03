@@ -12,8 +12,8 @@ class CardList extends Component {
     render(props) {
         let cardContent = null;
         cardContent = (
-            this.state.cardData.map(item => {
-                return <Card {...item}></Card>
+            this.state.cardData.map((item, index) => {
+                return <Card key={index} {...item}></Card>
             })
         );
         return (
@@ -24,6 +24,7 @@ class CardList extends Component {
                         <th scope="col">Age</th>
                         <th scope="col">Subject</th>
                         <th scope="col">Image</th>
+                        <th scope="col">Action</th>
                     </tr>
                 </thead>
                 <tbody>
