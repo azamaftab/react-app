@@ -7,8 +7,6 @@ import "./theme.css";
 
 library.add(faStroopwafel,faTimes,faPencilAlt)
 
-
-
 class App extends Component {
   render() {
     return (            

@@ -8,12 +8,14 @@ class CardList extends Component {
             cardData: props.cardData
         }
     }
-
+    deleteHandler = (id) => {
+        console.log(id);
+    }
     render(props) {
         let cardContent = null;
         cardContent = (
             this.state.cardData.map((item, index) => {
-                return <Card key={index} {...item}></Card>
+                return <Card key={item.id} {...item} clicked={() => this.deleteHandler(item.id)}></Card>
             })
         );
         return (

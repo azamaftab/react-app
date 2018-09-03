@@ -3,7 +3,7 @@ import React, { Component } from "react";
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
-const styles =  ({
+const styles = ({
     cursorPointer: {
         cursor: 'pointer'
     }
@@ -26,7 +26,7 @@ class Card extends Component {
                 </td>
                 <td>
                     <div className="row">
-                        <div className="col-sm-2" style={styles.cursorPointer}>
+                        <div className="col-sm-2" style={styles.cursorPointer} onClick={this.state.item.clicked}>
                             <FontAwesomeIcon icon="times" />
                         </div>
                         <div className="col-sm-2" style={styles.cursorPointer}>

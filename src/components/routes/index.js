@@ -1,21 +1,24 @@
 import React from "react";
-import { BrowserRouter as Router, Route, History } from "react-router-dom";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
 import { Provider } from "react-redux";
 
 import Home from "../home/home";
 import Course from "../course/course";
 import Navbar from "../nav/navbar";
-import configureStore from "../../store/configureStore";
+import NotFound from "../Error/notFound"
 
+import configureStore from "../../store/configureStore";
 export default () => (
-    
-        <Router>
-            <div>
-                <Navbar></Navbar>
-                <div className="container">
+    <BrowserRouter>
+        <div>
+            <Navbar></Navbar>
+            <div className="container">
+                <Switch>
                     <Route exact path="/" component={Home} />
-                    <Route path="/course" component={Course} />
-                </div>
+                    <Route exact path="/course" component={Course} />
+                    <Route component={NotFound}></Route>
+                </Switch>
             </div>
-        </Router>
+        </div>
+    </BrowserRouter>
 );
